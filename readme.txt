@@ -2,7 +2,7 @@ Folders structure:
 
 +- group folder ( example: ka71, ka72, ka73, ka74, ka77 )
 |\
-| +- student folder ( example: IvanovIvan )
+| +- student folder ( example: Ivanov Ivan )
 | |\
 | | +- lab1 folder
 | | |\
