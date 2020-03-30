@@ -24,6 +24,9 @@ h2, h3, h4, h5, h6 {
 .group__link {
 	margin-left: 12px;
 }
+.group__link::before {
+	content: '&#x21F2;',
+}
 .group_ka71 {
 	background-color: #eeeeee;
 }

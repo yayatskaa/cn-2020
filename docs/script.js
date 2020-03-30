@@ -82,7 +82,6 @@ window.addEventListener( 'load', async () => {
 								"target": "_blank",
 							},
 							classList: [ "group__link" ],
-							content: [ "\u21F2", ],
 						} ),
 
 					], } ),
@@ -97,7 +96,6 @@ window.addEventListener( 'load', async () => {
 									"target": "_blank",
 								},
 								classList: [ "group__link" ],
-								content: [ "\u21F2", ],
 							} ),
 						], } ),
 						$( "ol", { content: [
@@ -110,7 +108,6 @@ window.addEventListener( 'load', async () => {
 											"target": "_blank",
 										},
 										classList: [ "group__link" ],
-										content: [ "\u21F2", ],
 									} ),
 								],
 							} ) ),
