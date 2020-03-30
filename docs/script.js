@@ -11,6 +11,13 @@ window.addEventListener( 'load', async () => {
 	];
 
 
+	const append = ( parent ) => ( child ) => {
+		if ( child instanceof Object ) {
+			parent.appendChild( child );
+		} else {
+			parent.textContent = child;
+		}
+	};
 	const $ = ( tag, { attr, classList, parent, content, } ) => {
 		const result = document.createElement( tag );
 
@@ -25,14 +32,9 @@ window.addEventListener( 'load', async () => {
 		}
 
 		if ( content instanceof Array ) {
-			for ( const c of content ) {
-				const [ t, o = {}, ] = c instanceof Array ? c : [ c ];
-				$( t, { ...o, parent: result, } );
-			}
-		} else if ( content instanceof Object ) {
-			result.appendChild( content );
-		} if ( content ) {
-			result.textContent = content;
+			content.forEach( append( result ) );
+		} else {
+			append( result, content );
 		}
 
 		if ( parent ) {
