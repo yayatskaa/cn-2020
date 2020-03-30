@@ -1,6 +1,8 @@
 {
 	"class": "group_ka71",
-	"items": [
-		{}
-	]
+	"group": "ka71",
+	"students": [
+		"Vsevolod Gulchuk"
+	],
+	"title": "KA-71"
 }
