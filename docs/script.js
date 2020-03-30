@@ -11,6 +11,38 @@ window.addEventListener( 'load', async () => {
 	];
 
 
+	const $ = ( tag, { attr, classList, parent, content, } ) => {
+		const result = document.createElement( tag );
+
+		if ( attr instanceof Object ) {
+			for ( const [ key, value ] of Object.entries( attr ) ) {
+				result.setAttribute( key, value );
+			}
+		}
+
+		if ( classList instanceof Array ) {
+			result.classList.add( ...classList );
+		}
+
+		if ( content instanceof Array ) {
+			for ( const c of content ) {
+				const [ t, o = {}, ] = c instanceof Array ? c : [ c ];
+				$( t, { ...o, parent: result, } );
+			}
+		} else if ( content instanceof Object ) {
+			result.appendChild( content );
+		} if ( content ) {
+			result.textContent = content;
+		}
+
+		if ( parent ) {
+			parent.appendChild( result );
+		}
+
+		return result;
+	};
+
+
 	groups = groups.map( async ( groupFile ) => {
 		try {
 			const response = await fetch( 
@@ -36,34 +68,31 @@ window.addEventListener( 'load', async () => {
 	groups = groups.map( ( groupData ) => {
 		const { class: className, group, title: titleName, students, } = groupData;
 
-		const section = document.createElement( "section" );
-		section.classList.add( "group", className );
-
-		const title = document.createElement( "h2" );
-		title.textContent = titleName;
-		section.appendChild( title );
-
-		for ( const studentName of students ) {
-			const student = document.createElement( "h3" );
-			student.textContent = studentName;
-			section.appendChild( student );
-
-			const labs = document.createElement( "ol" );
-			section.appendChild( labs );
-
-			for ( const labName of [ "lab1", "lab2", "lab3", "lab4", "lab5" ] ) {
-				const lab = document.createElement( "li" );
-				labs.appendChild( lab );
-
-				const link = document.createElement( "a" );
-				link.setAttribute( "href", `${ baseRepo }/tree/master/${ group }/${ studentName }/${ labName }` );
-				link.setAttribute( "target", "_blank" );
-				link.textContent = labName;
-				lab.appendChild( link );
-			}
-		}
-
-		return section;
+		return $( "section", {
+			classList: [ "group", className ],
+			content: [
+				$( "h2", { content: titleName, } ),
+				...students.map( studentName => $( 'div', {
+					content: [
+						$( "h3", { content: studentName, } ),
+						$( "ol", { content: [
+							...[ "lab1", "lab2", "lab3", "lab4", "lab5" ].map( labName => $( "li", {
+								content: [
+									$( "a", {
+										attr: {
+											"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/${ labName }`,
+											"target": "_blank",
+										},
+										content: [ labName ],
+									} ),
+								],
+								parent: labs,
+							} ) ),
+						] } ),
+					],
+				} ) ),
+			],
+		} );
 	} );
 
 	const main = document.getElementById( 'main' );
