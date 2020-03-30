@@ -84,6 +84,7 @@ window.addEventListener( 'load', async () => {
 
 				], } ),
 				...students.map( studentName => $( 'div', {
+					classList: [ "group__student" ],
 					content: [
 						$( "h3", { content: [
 							$( "a", {
