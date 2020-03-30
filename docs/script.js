@@ -11,21 +11,27 @@ window.addEventListener( 'load', async () => {
 
 
 	groups = groups.map( async ( groupFile ) => {
-		const response = await fetch( 
-			`${ base }/${ groupFile }`,
-			// {
-			// 	method: 'GET',
-			// 	cache: 'no-cache',
-			// 	credentials: 'same-origin', // include, *same-origin, omit
-			// 	redirect: 'follow', // manual, *follow, error
-			// 	referrerPolicy: 'no-referrer', // no-referrer, *client
-			// }
-		);
-		return await response.json();
+		try {
+			const response = await fetch( 
+				`${ base }/${ groupFile }`,
+				// {
+				// 	method: 'GET',
+				// 	cache: 'no-cache',
+				// 	credentials: 'same-origin', // include, *same-origin, omit
+				// 	redirect: 'follow', // manual, *follow, error
+				// 	referrerPolicy: 'no-referrer', // no-referrer, *client
+				// }
+			);
+			return await response.json();
+		} catch ( error ) {
+			console.log( error );
+			return false;
+		}
 	} );
 	groups = await Promise.all( groups );
 
 
+	groups = groups.filter( group => group );
 	groups = groups.map( ( groupData ) => {
 		const { class: className, group, title: titleName, students, } = groupData;
 
