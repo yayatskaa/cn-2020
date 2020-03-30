@@ -1,6 +1,7 @@
 window.addEventListener( 'load', async () => {
 
-	const base = `https://sergej-kucharev.github.io/cn-2020`;
+	const baseRepo = `https://github.com/sergej-kucharev/cn-2020`;
+	const baseSite = `https://sergej-kucharev.github.io/cn-2020`;
 	let groups = [
 		'group-ka71.json',
 		'group-ka72.json',
@@ -13,7 +14,7 @@ window.addEventListener( 'load', async () => {
 	groups = groups.map( async ( groupFile ) => {
 		try {
 			const response = await fetch( 
-				`${ base }/${ groupFile }`,
+				`${ baseSite }/${ groupFile }`,
 				// {
 				// 	method: 'GET',
 				// 	cache: 'no-cache',
@@ -55,7 +56,7 @@ window.addEventListener( 'load', async () => {
 				labs.appendChild( lab );
 
 				const link = document.createElement( "a" );
-				link.setAttribute( "href", `${ base }/tree/master/${ group }/${ studentName }/${ labName }` );
+				link.setAttribute( "href", `${ baseRepo }/tree/master/${ group }/${ studentName }/${ labName }` );
 				link.setAttribute( "target", "_blank" );
 				link.textContent = labName;
 				lab.appendChild( link );
