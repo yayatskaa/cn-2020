@@ -16,4 +16,4 @@ Folders structure:
 | | | |\
 | | | | +- ...
 
-https://sergej-kucharev.github.io/cn-2020/
+https://sergej-kucharev.github.io/cn-2020/index.html
