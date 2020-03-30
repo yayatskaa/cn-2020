@@ -34,7 +34,7 @@ window.addEventListener( 'load', async () => {
 		if ( content instanceof Array ) {
 			content.forEach( append( result ) );
 		} else {
-			append( result, content );
+			append( result )( content );
 		}
 
 		if ( parent ) {
