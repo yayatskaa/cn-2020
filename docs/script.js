@@ -28,23 +28,23 @@ window.addEventListener( 'load', async () => {
 		const section = document.createElement( "section" );
 		section.classList.add( "group", className );
 
-		const title = $( "h2" );
+		const title = document.createElement( "h2" );
 		title.textContent = titleName;
 		section.appendChild( title );
 
 		for ( const studentName of students ) {
-			const student = $( "h3" );
+			const student = document.createElement( "h3" );
 			student.textContent = studentName;
 			section.appendChild( student );
 
-			const labs = $( "ol" );
+			const labs = document.createElement( "ol" );
 			section.appendChild( labs );
 
 			for ( const labName of [ "lab1", "lab2", "lab3", "lab4", "lab5" ] ) {
-				const lab = $( "li" );
+				const lab = document.createElement( "li" );
 				labs.appendChild( lab );
 
-				const link = $( "a" );
+				const link = document.createElement( "a" );
 				link.setAttribute( "href", `${ base }/tree/master/${ group }/${ studentName }/${ labName }` );
 				link.setAttribute( "target", "_blank" );
 				lab.appendChild( link );
