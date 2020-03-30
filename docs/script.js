@@ -47,6 +47,7 @@ window.addEventListener( 'load', async () => {
 				const link = document.createElement( "a" );
 				link.setAttribute( "href", `${ base }/tree/master/${ group }/${ studentName }/${ labName }` );
 				link.setAttribute( "target", "_blank" );
+				link.textContent = labName;
 				lab.appendChild( link );
 			}
 		}
