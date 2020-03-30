@@ -54,7 +54,7 @@ window.addEventListener( 'load', async () => {
 		return section;
 	} );
 
-	const main = document.getElemntById( 'main' );
+	const main = document.getElementById( 'main' );
 	for ( const group of groups ) {
 		main.appendChild( group );
 	}
