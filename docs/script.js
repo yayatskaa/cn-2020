@@ -81,6 +81,7 @@ window.addEventListener( 'load', async () => {
 								"href": `${ baseRepo }/tree/master/${ group }/`,
 								"target": "_blank",
 							},
+							classList: [ "group__link" ],
 							content: [ "\u21F2", ],
 						} ),
 
@@ -95,6 +96,7 @@ window.addEventListener( 'load', async () => {
 									"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/`,
 									"target": "_blank",
 								},
+								classList: [ "group__link" ],
 								content: [ "\u21F2", ],
 							} ),
 						], } ),
@@ -107,6 +109,7 @@ window.addEventListener( 'load', async () => {
 											"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/${ labName }`,
 											"target": "_blank",
 										},
+										classList: [ "group__link" ],
 										content: [ "\u21F2", ],
 									} ),
 								],

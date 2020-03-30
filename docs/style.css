@@ -21,6 +21,9 @@ h2, h3, h4, h5, h6 {
 .group__student {
 	margin: 12px;	
 }
+.group__link {
+	margin-left: 12px;
+}
 .group_ka71 {
 	background-color: #eeeeee;
 }
