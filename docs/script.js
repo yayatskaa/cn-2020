@@ -3,6 +3,10 @@ window.addEventListener( 'load', async () => {
 	const base = `https://sergej-kucharev.github.io/cn-2020`;
 	let groups = [
 		'group-ka71.json',
+		'group-ka72.json',
+		'group-ka73.json',
+		'group-ka74.json',
+		'group-ka77.json',
 	];
 
 
