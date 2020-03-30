@@ -73,17 +73,18 @@ window.addEventListener( 'load', async () => {
 		return $( "section", {
 			classList: [ "group", className ],
 			content: [
-				titleName,
-				$( "h2", { content: [
-					$( "a", {
-						attr: {
-							"href": `${ baseRepo }/tree/master/${ group }/`,
-							"target": "_blank",
-						},
-						content: [ '&#x21f2;', ],
-					} ),
+				$( "h2", {
+					content: [
+						titleName,
+						$( "a", {
+							attr: {
+								"href": `${ baseRepo }/tree/master/${ group }/`,
+								"target": "_blank",
+							},
+							content: [ '&#x21f2;', ],
+						} ),
 
-				], } ),
+					], } ),
 				...students.map( studentName => $( 'div', {
 					classList: [ "group__student" ],
 					content: [
