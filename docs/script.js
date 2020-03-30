@@ -86,7 +86,6 @@ window.addEventListener( 'load', async () => {
 										content: [ labName ],
 									} ),
 								],
-								parent: labs,
 							} ) ),
 						] } ),
 					],
