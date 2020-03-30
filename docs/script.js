@@ -81,7 +81,7 @@ window.addEventListener( 'load', async () => {
 								"href": `${ baseRepo }/tree/master/${ group }/`,
 								"target": "_blank",
 							},
-							content: [ &#x21f2;, ],
+							content: [ "&#x21F2;", ],
 						} ),
 
 					], } ),
