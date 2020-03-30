@@ -8,8 +8,12 @@ html, body {
 a {
 	text-decoration: none;
 }
+ol {
+	margin: 0;
+}
 .group {
-	margin: 0 12px;
+	margin: 12px;
+	padding: 6px 12px;
 }
 .group__student {
 	margin: 0 12px;	
