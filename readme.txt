@@ -15,3 +15,5 @@ Folders structure:
 | | | +- dump
 | | | |\
 | | | | +- ...
+
+https://sergej-kucharev.github.io/cn-2020/
