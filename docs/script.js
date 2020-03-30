@@ -81,7 +81,7 @@ window.addEventListener( 'load', async () => {
 								"href": `${ baseRepo }/tree/master/${ group }/`,
 								"target": "_blank",
 							},
-							content: [ "&#x21F2;", ],
+							content: [ "&#21F2;", ],
 						} ),
 
 					], } ),
@@ -89,23 +89,25 @@ window.addEventListener( 'load', async () => {
 					classList: [ "group__student" ],
 					content: [
 						$( "h3", { content: [
+							studentName,
 							$( "a", {
 								attr: {
 									"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/`,
 									"target": "_blank",
 								},
-								content: [ studentName, ],
+								content: [ "&#21F2;", ],
 							} ),
 						], } ),
 						$( "ol", { content: [
 							...[ "lab1", "lab2", "lab3", "lab4", "lab5" ].map( labName => $( "li", {
 								content: [
+									labName,
 									$( "a", {
 										attr: {
 											"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/${ labName }`,
 											"target": "_blank",
 										},
-										content: [ labName, ],
+										content: [ "&#21F2;", ],
 									} ),
 								],
 							} ) ),
