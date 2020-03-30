@@ -73,10 +73,27 @@ window.addEventListener( 'load', async () => {
 		return $( "section", {
 			classList: [ "group", className ],
 			content: [
-				$( "h2", { content: titleName, } ),
+				$( "h2", { content: [
+					$( "a", {
+						attr: {
+							"href": `${ baseRepo }/tree/master/${ group }/`,
+							"target": "_blank",
+						},
+						content: [ titleName, ],
+					} ),
+
+				], } ),
 				...students.map( studentName => $( 'div', {
 					content: [
-						$( "h3", { content: studentName, } ),
+						$( "h3", { content: [
+							$( "a", {
+								attr: {
+									"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/`,
+									"target": "_blank",
+								},
+								content: [ studentName, ],
+							} ),
+						], } ),
 						$( "ol", { content: [
 							...[ "lab1", "lab2", "lab3", "lab4", "lab5" ].map( labName => $( "li", {
 								content: [
@@ -85,7 +102,7 @@ window.addEventListener( 'load', async () => {
 											"href": `${ baseRepo }/tree/master/${ group }/${ studentName }/${ labName }`,
 											"target": "_blank",
 										},
-										content: [ labName ],
+										content: [ labName, ],
 									} ),
 								],
 							} ) ),
